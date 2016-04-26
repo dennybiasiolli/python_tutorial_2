@@ -31,6 +31,7 @@ class Grid(object):
         else:
             print
         self.print_grid()
+        print 'Insert direction [w, a, s, d], \'q\' or \'x\' to quit'
         return treasure_found
 
     def move_up(self):
