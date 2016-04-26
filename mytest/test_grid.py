@@ -19,28 +19,16 @@ def raw_mode(file):
 
 def dead(why):
     print why
-    # exit(0)
 
 def main():
     grid = Grid()
     grid.print_position('')
-    # while True:
-    #     input_chars = raw_input('Insert direction [w, a, s, d], \'q\' to quit: ')
-    #     input_chars = input_chars.lower()
-    #     for char in input_chars:
-    #         if char == 'x' or char == 'q':
-    #             dead('Bye bye!')
-    #         elif char not in ['w', 'a', 's', 'd']:
-    #             print 'Wrong direction!'
-    #         else:
-    #             if(grid.move(char)):
-    #                 dead('Treasure found, great!')
-    print 'exit with ^C or ^D'
     with raw_mode(sys.stdin):
         try:
             while True:
                 char = sys.stdin.read(1)
                 char = char.lower()
+                print char
                 if not char or char == chr(4):
                     break
                 if char == 'x' or char == 'q':
