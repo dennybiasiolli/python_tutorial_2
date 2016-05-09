@@ -32,21 +32,18 @@ print('')
 
 
 def fib_yield(x):
-    num_current = 0
-    num_next = 1
+    num_calc = [1, 1]
     for i in range(1, x):
-        num_tmp = num_current
-        num_current = num_next
-        num_next += num_tmp
-        yield num_current
+        num_calc.append(num_calc[0] + num_calc[1])
+        yield num_calc.pop(0)
 
 
 @timing
 def print_fib_yield(x):
     for i in fib_yield(x):
-        print('%d, ' % i),
+        print('%d,' % i),
     print('')
 
 
 print_fib_recursion(30)
-print_fib_yield(5000)
+print_fib_yield(30)
