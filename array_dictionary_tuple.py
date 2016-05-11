@@ -36,4 +36,4 @@ for index, num in enumerate(sqs):
 print(sqsArr)
 
 sqs2 = [(index + 1, n**2,) for index, n in enumerate(range(1, 20)) if n % 2 == 0]
-print sqs2
+print(sqs2)
